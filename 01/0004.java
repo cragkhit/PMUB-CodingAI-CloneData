@@ -1,29 +1,16 @@
-public static void bubbleSort(int[] arr) {
-        int n = arr.length;
-        int start = 0;
-        int end = n - 1;
-        while (start < end) {
-            boolean swapped = false;
-            for (int i = start; i < end; i++) {
-                if (arr[i] > arr[i + 1]) {
-                    int temp = arr[i];
-                    arr[i] = arr[i + 1];
-                    arr[i + 1] = temp;
-                    swapped = true;
+public class BasicBubbleSort {
+    public static void bubbleSort(int[] array) {
+        int n;
+        n = array.length;
+        for (int count1 = 0; count1 < n - 1; count1++) {
+            for (int count2 = 0; count2 < n - count1 - 1; count2++) {
+                if (array[count2] > array[count2 + 1]) {
+                    int temp;
+                    temp = array[count2];
+                    array[count2] = array[count2 + 1];
+                    array[count2 + 1] = temp;
                 }
-            }
-            end--;
-            for (int i = end; i > start; i--) {
-                if (arr[i] < arr[i - 1]) {
-                    int temp = arr[i];
-                    arr[i] = arr[i - 1];
-                    arr[i - 1] = temp;
-                    swapped = true;
-                }
-            }
-            start++;
-            if (!swapped) {
-                break;
             }
         }
     }
+}
